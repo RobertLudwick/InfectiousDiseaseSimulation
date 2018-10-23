@@ -1,0 +1,30 @@
+body{
+  background: linear-gradient(to bottom, #0033cc 0%, #666699 100%);
+  height:100vh;
+}
+head{background-color:black;}
+h1{text-align:center;
+    background-color:black;
+    color:white;
+    height:100;
+     margin: 0;
+    padding: 0;
+}
+
+.pirate{height:75px;
+    width:120px;
+}
+
+.card-title{text-align:center;}
+
+.butt{text-align:center;}
+
+.card-body{
+    margin:10px;
+}
+.card{
+    margin:30px;
+    height:40vh;
+    background-color: white;
+
+}
