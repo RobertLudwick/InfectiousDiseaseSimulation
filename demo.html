@@ -1,0 +1,56 @@
+<html>
+
+   <head>
+      <script type="text/javascript" src="sirmodel.js" ></script>
+   </head>
+   
+   <body>
+      <table id="myTable">
+        <tr>
+            <td>Day</td>
+            <td>Sick</td>
+            <td>Immune</td>
+            <td>Population</td>
+        </tr>
+        <br>
+
+        <button onclick="generateData() ">Click here to populate table</button>
+        <button onclick="myFunction() ">test</button>
+        <script>
+            function generateData() {
+                var data = new model(2, 1, 2, 1)
+                var table  = document.getElementById("myTable")
+                for (day in data.days) {
+                    var row = table.insertRow(-1);
+
+                    var cell1 = row.insertCell(0)
+                    var cell2 = row.insertCell(1)
+                    var cell3 = row.insertCell(2)
+                    var cell4 = row.insertCell(3)
+
+                    cell1.innerHTML = data.days[day]
+                    cell2.innerHTML = data.sick[day]
+                    cell3.innerHTML = data.immune[day]
+                    cell4.innerHTML = data.population[day]
+                }
+            }
+            function myFunction() {
+                var table = document.getElementById("myTable");
+                var ar = [1,2,3,4,5,6,7,8,9,10]
+                for(i in ar) {
+                    var row = table.insertRow(-1);
+                    var cell1 = row.insertCell(0);
+                    var cell2 = row.insertCell(1);
+                    var cell3 = row.insertCell(2);
+                    var cell4 = row.insertCell(3);
+                    cell1.innerHTML = "NEW CELL1";
+                    cell2.innerHTML = "NEW CELL2";
+                    cell3.innerHTML = "NEW CELL3";
+                    cell4.innerHTML = "NEW CELL4";
+                }
+                
+}
+        </script>
+      </table>
+   </body>
+</html>
