@@ -15,7 +15,7 @@
       <link rel="stylesheet" type="text/css" href="index.css">
           <meta charset="utf-8"> 
       <head>
-
+		<script type="text/javascript" src="sirmodel.js" ></script>
       <h1><img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones">Infectious Disease Simulation<img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones"></h1>
     </head>
     <body>
@@ -44,7 +44,7 @@
             <a href="#" class="btn btn-primary">Clear</a>
             
             <p id="demo"></p>
-            
+           
 
         </div>
     </span>
@@ -88,16 +88,7 @@
             </TABLE>
             <br>
             <br>
-      		<script>
-			function Autorun() {
-    		var imunity = document.getElementById("initialImmunity").value;
-    		var virulence = document.getElementById("Virulence").value;
-    		var duration = document.getElementById("infectionDuration").value;
-    		var transmission = document.getElementById("TransRate").value;
-   			//var data = new model(imunity, virulence, duration, transmission)
-   			document.getElementById("demo").innerHTML = transmission;
-			}
-			</script>
+      		
     </div>
 
   </div>

@@ -69,3 +69,15 @@ function model(percent_immune, virulence, infection_duration, transmission_rate)
     this.immune = model.immune + model.dead
     this.population = model.population
 }
+
+function Autorun() {
+    var imunity = document.getElementById("initialImmunity").value;
+    var virulence = document.getElementById("Virulence").value;
+    var duration = document.getElementById("infectionDuration").value;
+    var transmission = document.getElementById("TransRate").value;
+   	var data = new model(imunity, virulence, duration, transmission)
+   	var out = document.getElementById("myTable");
+   	document.getElementById("demo").innerHTML = transmission;
+   			
+	//document.getElementById("demo").innerHTML = transmission;
+	}
