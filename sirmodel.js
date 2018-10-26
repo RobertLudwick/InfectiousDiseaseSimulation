@@ -33,11 +33,11 @@ function sirmodel(initial_population, infection_duration, Rzero, percent_die, pe
 
             
             days.push(n)
-            s.push(s_prime)
-            i.push(i_prime)
-            r.push(r_prime)
-            dead.push(dead_prime)
-            N.push(N_prime)
+            s.push(Math.round(s_prime)) 
+            i.push(Math.round(i_prime))
+            r.push(Math.round(r_prime))
+            dead.push(Math.round(dead_prime))
+            N.push(Math.round(N_prime))
         }
 
     }
