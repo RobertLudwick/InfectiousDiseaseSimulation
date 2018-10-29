@@ -119,7 +119,7 @@ function gatherData() {
 		document.getElementById("demo").innerHTML = "Error: incorrect Duration of infection value entered";
 	}
 	if (transmission > 10.0 || transmission < 0.1) {
-		document.getElementById("demo").innerHTML = "Error: incorrect Rate if Transmission value entered";
+		document.getElementById("demo").innerHTML = "Error: incorrect Rate of Transmission value entered";
 	}
 	
 
