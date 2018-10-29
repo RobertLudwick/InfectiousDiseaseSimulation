@@ -40,7 +40,7 @@
       <span>
           <div class="butt">
             <a href="#" class="btn btn-primary" onclick="generateData()">Autorun</a>
-            <a href="#" class="btn btn-primary">Run Day-By-Day</a>
+            <a href="#" class="btn btn-primary" onclick="generateDatadaybyday()">Run Day-By-Day</a>
             <a href="#" class="btn btn-primary" onclick="Clear()">Clear</a>
             
             <p id="demo"></p>
@@ -52,12 +52,10 @@
     
   </div>
   
-   <div class="card" id="tableOut" style="width: 40rem;">
+   <div class="card" id="tableOut" style="width: 40rem; height: 75rem;">
   	<div class="card-body">
           <h3 class="card-title">Results</h3>
-          <br>
-          <br>
-              <table id="myTable">
+              <table id="myTable" width="375" BORDER="5">
         <tr>
             <td>Day</td>
             <td>Sick</td>
