@@ -105,28 +105,36 @@ function Clear(data) {
 }
 
 function gatherData() {
+	//document.getElementById("demo").innerHTML = Nan;
 	var imunity = document.getElementById("initialImmunity").value;
     var virulence = document.getElementById("Virulence").value;
 	var duration = document.getElementById("infectionDuration").value;
     var transmission = document.getElementById("TransRate").value;
-	if (imunity > 100 || imunity < 0) {
+	//document.getElementById("demo").innerHTML =  imunity;
+	if (imunity > 100 || imunity < 0 || imunity == "" ) {
 		document.getElementById("demo").innerHTML = "Error: incorrect imunity value entered";
+		return true
 	}
-	if (virulence > 0.75 || imunity < 0) {
+	if (virulence > 0.75 || imunity < 0 || imunity == "" ) {
 		document.getElementById("demo").innerHTML = "Error: incorrect virulence value entered";
+		return true
 	}
-	if (duration > 20 || duration < 1) {
+	if (duration > 20 || duration < 1 || imunity == "" ) {
 		document.getElementById("demo").innerHTML = "Error: incorrect Duration of infection value entered";
+		return true
 	}
-	if (transmission > 10.0 || transmission < 0.1) {
+	if (transmission > 10.0 || transmission < 0.1 || imunity == "" ) {
 		document.getElementById("demo").innerHTML = "Error: incorrect Rate of Transmission value entered";
+		return true
 	}
-	
-
+	return false
 }
 
  function generateData() {
-                gatherData()
+                var running = gatherData()
+                if (running == true){
+                	return "something"; //stop here
+                }
                 var imunity = document.getElementById("initialImmunity").value;
     			var virulence = document.getElementById("Virulence").value;
     			var duration = document.getElementById("infectionDuration").value;
@@ -149,7 +157,10 @@ function gatherData() {
             }
 
 function generateDatadaybyday() {
-                gatherData()
+                var running = gatherData()
+                if (running == true){
+                	return "soemthing"; //stop here
+                }
                 var imunity = document.getElementById("initialImmunity").value;
     			var virulence = document.getElementById("Virulence").value;
     			var duration = document.getElementById("infectionDuration").value;
