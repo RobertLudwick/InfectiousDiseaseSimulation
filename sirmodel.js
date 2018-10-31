@@ -72,4 +72,8 @@ function model(percent_immune, virulence, infection_duration, trans_rate){
 // helper functions
 function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> c996df579060416f53a2540aa3d2218663709eed
