@@ -33,36 +33,27 @@ function Clear(data) {
 }
 
 function gatherData() {
-	//document.getElementById("demo").innerHTML = Nan;
 	var imunity = document.getElementById("initialImmunity").value;
     var virulence = document.getElementById("Virulence").value;
 	var duration = document.getElementById("infectionDuration").value;
     var transmission = document.getElementById("TransRate").value;
-	//document.getElementById("demo").innerHTML =  imunity;
-	if (imunity > 100 || imunity < 0 || imunity == "" ) {
+	if (imunity > 100 || imunity < 0) {
 		document.getElementById("demo").innerHTML = "Error: incorrect imunity value entered";
-		return true
 	}
-	if (virulence > 0.75 || imunity < 0 || imunity == "" ) {
+	if (virulence > 0.75 || imunity < 0) {
 		document.getElementById("demo").innerHTML = "Error: incorrect virulence value entered";
-		return true
 	}
-	if (duration > 20 || duration < 1 || imunity == "" ) {
+	if (duration > 20 || duration < 1) {
 		document.getElementById("demo").innerHTML = "Error: incorrect Duration of infection value entered";
-		return true
 	}
-	if (transmission > 10.0 || transmission < 0.1 || imunity == "" ) {
+	if (transmission > 10.0 || transmission < 0.1) {
 		document.getElementById("demo").innerHTML = "Error: incorrect Rate of Transmission value entered";
-		return true
 	}
-	return false
+	
 }
 
  function generateData() {
-                var running = gatherData()
-                if (running == true){
-                	return "something"; //stop here
-                }
+                gatherData()
                 var imunity = document.getElementById("initialImmunity").value;
     			var virulence = document.getElementById("Virulence").value;
     			var duration = document.getElementById("infectionDuration").value;
@@ -85,10 +76,7 @@ function gatherData() {
             }
 
 function generateDatadaybyday() {
-                var running = gatherData()
-                if (running == true){
-                	return "soemthing"; //stop here
-                }
+                gatherData()
                 var imunity = document.getElementById("initialImmunity").value;
     			var virulence = document.getElementById("Virulence").value;
     			var duration = document.getElementById("infectionDuration").value;
@@ -109,4 +97,3 @@ function generateDatadaybyday() {
                     cell4.innerHTML = data.population[day]
                 }
             }
-

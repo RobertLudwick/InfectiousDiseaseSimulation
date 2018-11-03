@@ -1,9 +1,9 @@
+// Author: Kibugi Kamau Mbugua
+// Description: This program is written to implement to SIR model for the mathematical modeling of diseases.
+// Version2 began: 10/30/2018
 
 
-function sirmodel(initial_population, infection_duration, trans_rate, percent_die, percent_immune, initial_infected) {
-
-    // fixed parameters
-    var sim_period = 30
+function sirmodel(initial_population, infection_duration, trans_rate, percent_die, percent_immune, initial_infected, sim_period) {
 
     // data
     days = new Array()
@@ -28,12 +28,12 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
             s_prime = s[n-1] - (trans_rate * s[n-1] * i[n-1]/initial_population)
             i_prime = i[n-1] + (trans_rate * s[n-1] * i[n-1]/initial_population - i[n-1]/infection_duration - i[n-1] * percent_die/(100*infection_duration))
             r_prime = r[n-1] + (i[n-1]/infection_duration)
-            dead_prime = percent_die * i[n-1]/(100 * infection_duration) + dead[n-1]
+            dead_prime = dead[n-1] = percent_die * i[n-1]/(100 * infection_duration)
             N_prime = s_prime + i_prime + r_prime
 
             
             days.push(n)
-            s.push(round(s_prime, 2)) 
+            s.push(round(s_prime, 2))
             i.push(round(i_prime, 2))
             r.push(round(r_prime, 2))
             dead.push(round(dead_prime, 2))
@@ -54,26 +54,25 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
 
 }
 
-// use this to get your number, it's like temporary interface to get numbers
+// use this to get your numbers, it's like temporary interface to get numbers
 // it can return the list of number we see on the website. all values in percent
 function model(percent_immune, virulence, infection_duration, trans_rate){
     // default/fixed values
     var initial_population = 100000
     var initial_infected = 1
+    var sim_period = 30
 
-    var model = new sirmodel(initial_population, infection_duration, trans_rate, virulence*100, percent_immune, initial_infected)
+    var model = new sirmodel(initial_population, infection_duration, trans_rate, virulence, percent_immune, initial_infected, sim_period)
     this.days = model.days
     this.susceptible = model.Susceptible
     this.sick = model.infected
     this.immune = model.immune
+    this.dead = model.dead
     this.population = model.population
 }
 
 // helper functions
 function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
-<<<<<<< HEAD
-  }
-=======
-  }
->>>>>>> c996df579060416f53a2540aa3d2218663709eed
+  } 
+  

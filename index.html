@@ -1,61 +1,58 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    
-
-    
-      <link rel="stylesheet" type="text/css" href="index.css">
-          <meta charset="utf-8"> 
-      <head>
-		<script type="text/javascript" src="sirmodel.js" ></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8"> 
+    <head>
+	    <script type="text/javascript" src="sirmodel.js" ></script>
 		<script type="text/javascript" src="index.js" ></script>
-      <h1><img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones">Infectious Disease Simulation<img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones"></h1>
+        <h1><img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones">Infectious Disease Simulation<img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones"></h1>
     </head>
     <body>
         <div class="row ">
             <div class="mx-auto">
             <div class="col-md-6">
-              <div class="card" style="width: 40rem;">
-              <div class="card-body">
-                  <h3 class="card-title">Experimental Variables</h3>
-                  <br>
-                  <br>
-                    <label for="initialImmunity"> Initial % Immunity (0-100%) </label>
-                    <input id="initialImmunity" type="number" min="1" step="1">
+                <div class="card" style="width: 40rem;">
+                    <div class="card-body">
+                        <h3 class="card-title">Experimental Variables</h3>
+                        <br>
+                        <br>
+                        <label for="initialImmunity"> Initial % Immunity (0-100%) </label>
+                        <input id="initialImmunity" type="number" min="1" step="1">
                     
-                    <label for="Virulence"> Virulence (0.00- 0.75) </label> 
-                    <input id="Virulence" type="number" min="0.01" step="0.01">
+                        <label for="Virulence"> Virulence (0.00- 0.75) </label> 
+                        <input id="Virulence" type="number" min="0.01" step="0.01">
         
-                    <label for="infectionDuration"> Duration of Infection (1-20) </label>
-                    <input id="infectionDuration" type="number" min="1" step="1">
+                        <label for="infectionDuration"> Duration of Infection (1-20) </label>
+                        <input id="infectionDuration" type="number" min="1" step="1">
         
-        			<label for="TransRate"> Rate of Transmission (0.1-10.0) </label>
-        			<input id="TransRate" type="number" min="0.01" step="0.01">
-                <br>
-                <br>
-              <span>
-                  <div class="butt">
-                    <a href="#" class="btn btn-primary" onclick="generateData()">Autorun</a>
-                    <a href="#" class="btn btn-primary" onclick="generateDatadaybyday()">Run Day-By-Day</a>
-                    <a href="#" class="btn btn-primary" onclick="Clear()">Clear</a>
+        			    <label for="TransRate"> Rate of Transmission (0.1-10.0) </label>
+        			    <input id="TransRate" type="number" min="0.01" step="0.01">
+                        <br>
+                        <br>
+                        <span>
+                            <div class="butt">
+                                <a href="#" class="btn btn-primary" onclick="generateData()">Autorun</a>
+                                <a href="#" class="btn btn-primary" onclick="generateDatadaybyday()">Run Day-By-Day</a>
+                                <a href="#" class="btn btn-primary" onclick="Clear()">Clear</a>
+                                
+                                <p id="demo"></p>
+                            
                     
-                    <p id="demo"></p>
-                   
-        
-                </div>
-            </span>
-            </div>
+                            </div>
+                        </span>
+                    </div>
             
-          </div>
-          </div>
+                </div>
+            </div>
           <div class="col-md-6">
            <div class="card" id="tableOut" style="width: 40rem; height: 75rem;">
           	<div class="card-body">
@@ -75,8 +72,8 @@
             </div>
         
           </div>
-          </div>
         </div>
+    </div>
   
     </body>
   </html>
