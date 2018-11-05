@@ -59,8 +59,12 @@ function model(percent_immune, virulence, infection_duration, trans_rate){
 
     // default/fixed values
     var initial_population = 100000
-    var initial_infected = 7
-    var sim_period = 30
+    var initial_infected = 1
+    var sim_period = 100
+
+    this. initial_population = initial_population
+    this.initial_infected = initial_infected
+    this.sim_period = sim_period
 
     var model = new sirmodel(initial_population, infection_duration, trans_rate, virulence, percent_immune, initial_infected, sim_period)
     this.days = model.days
