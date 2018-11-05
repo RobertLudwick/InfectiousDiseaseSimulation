@@ -57,6 +57,7 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
 // use this to get your numbers, it's like temporary interface to get numbers
 // it can return the list of number we see on the website. all values in percent
 function model(percent_immune, virulence, infection_duration, trans_rate){
+
     // default/fixed values
     var initial_population = 100000
     var initial_infected = 7
@@ -64,27 +65,9 @@ function model(percent_immune, virulence, infection_duration, trans_rate){
 
     var model = new sirmodel(initial_population, infection_duration, trans_rate, virulence, percent_immune, initial_infected, sim_period)
     this.days = model.days
-    this.susceptible = model.Susceptible
-    this.sick = model.infected
+    this.susceptible = model.susceptible
+    this.infected = model.infected
     this.immune = model.immune
     this.dead = model.dead
     this.population = model.population
 }
-
-// helper functions
-function round(value, decimals) {
-    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
-} 
-
-
-// Testing the model: Using the excel spread sheet to generate number and test them against the model
-/* 
-    First test using:
-    Length of infection = 2.00
-    R0/rate of transmission = 1.0
-    Percentage of people that die when infected = 0.00
-    Number of people in initial population
-    Percentage of initial population that is immune = 0.00
-    Number of infectious individual in initial population = 1.00
-*/
-

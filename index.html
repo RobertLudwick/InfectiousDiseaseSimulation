@@ -13,7 +13,7 @@
     <meta charset="utf-8"> 
     <head>
 	    <script type="text/javascript" src="sirmodel.js" ></script>
-		<script type="text/javascript" src="index.js" ></script>
+		<script type="text/javascript" src="index2.js" ></script>
         <h1><img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones">Infectious Disease Simulation<img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones"></h1>
     </head>
     <body>
@@ -40,8 +40,8 @@
                         <br>
                         <span>
                             <div class="butt">
-                                <a href="#" class="btn btn-primary" onclick="generateData()">Autorun</a>
-                                <a href="#" class="btn btn-primary" onclick="generateDatadaybyday()">Run Day-By-Day</a>
+                                <a href="#" class="btn btn-primary" onclick="run('autorun')">Autorun</a>
+                                <a href="#" class="btn btn-primary" onclick="run('day_by_day')">Run Day-By-Day</a>
                                 <a href="#" class="btn btn-primary" onclick="Clear()">Clear</a>
                                 
                                 <p id="demo"></p>
@@ -60,8 +60,10 @@
                       <table id="myTable" width="375" BORDER="5">
                 <tr>
                     <td>Day</td>
-                    <td>Sick</td>
+                    <td>Susceptible</td>
+                    <td>Infected</td>
                     <td>Immune</td>
+                    <td>Dead</td>
                     <td>Population</td>
                 </tr>
                 <br>
