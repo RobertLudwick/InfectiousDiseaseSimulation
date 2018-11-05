@@ -11,16 +11,20 @@
 
     <link rel="stylesheet" type="text/css" href="index.css">
     <meta charset="utf-8"> 
+    
     <head>
 	    <script type="text/javascript" src="sirmodel.js" ></script>
-		<script type="text/javascript" src="index.js" ></script>
+        <script type="text/javascript" src="index.js" ></script>
+        <!-- Plotly.js -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js" type="text/javascript"></script>
+        <script src="graph.js" type="text/javascript"></script>
+        <script src="sirmodel.js" type="text/javascript"></script>
         <h1><img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones">Infectious Disease Simulation<img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones"></h1>
     </head>
+
     <body>
-        <div class="row">
-            <div class="mx-auto">
-            <div class="col-md-6"></div>
-                <div class="card" style="width: 40rem;">
+        <div class="col-md-9" style="background-color: white; margin-bottom: 5px;margin-left: 14px">
+                <div class="col-md-4" style="background-color: white;">
                     <div class="card-body" style="width: auto">
                         <h3 class="card-title">Experimental Variables</h3>
                         <br>
@@ -56,12 +60,21 @@
                     </div>
             
                 </div>
-            
-          <div class="col-md-6" >
-           <div class="table-wrapper" id="tableOut" style="background-color: white; width: 40rem; height: auto;">
-          	<div class="card-body">
+                <div class="col-md-4" style="float:left"> 
+                    <div class="row" >
+                        <div class="row" id="plot"></div>
+                        
+                    </div>
+                </div>
+                
+        </div>  
+        <br>
+        <br>  
+        <div class="col-md-9" >
+           <div class="table-wrapper" id="tableOut" style="background-color: white; margin-bottom: 14px">
+            <div class="table-wrapper-scroll-y">
                   <h3 class="card-title">Results</h3>
-                      <table id="myTable" width="375" BORDER="5">
+                      <table class="table table-bordered table-striped" id="myTable" width="375" BORDER="5">
                 <tr>
                     <td>Day</td>
                     <td>Susceptible</td>
@@ -77,21 +90,6 @@
             </div>
             </div>
         
-          </div>
-          <div class=""> 
-            <input type="checkbox" name="susceptible_cb" id="susceptible_cb" value="susceptible_value" hidden checked onclick="show('susceptible_cb')"> Susceptible
-            <input type="checkbox" name="infected_cb" id="infected_cb" value="infected_value" hidden checked onclick="show('infected_cb')"> Infected
-            <input type="checkbox" name="immune_cb" id="immune_cb" value="immune_value" hidden checked onclick="show('immune_cb')"> Immune
-            <input type="checkbox" name="dead_cb" id="dead_cb" value="dead_value" hidden checked onclick="show('dead_cb')"> Dead
-            <input type="checkbox" name="population_cb" id="population_cb" hidden value="population_value" checked onclick="show('population_cb')"> Population
-            <div id="plot" style="width:600px;height:400px;"></div>
-          </div>
         </div>
-    </div>
-  
     </body>
-        <!-- Plotly.js -->
-        <script src="https://cdn.plot.ly/plotly-latest.min.js" type="text/javascript"></script>
-        <script src="graph.js" type="text/javascript"></script>
-        <script src="sirmodel.js" type="text/javascript"></script>
-  </html>
+</html>

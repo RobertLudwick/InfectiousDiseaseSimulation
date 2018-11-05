@@ -4,18 +4,17 @@ function  build_full_graph(data) {
     var type_a = "line"
     var line_a = {shape: "spline"}
 
-    document.getElementById("susceptible_cb").hidden = false
-    document.getElementById("infected_cb").hidden = false
-    document.getElementById("immune_cb").hidden = false
-    document.getElementById("dead_cb").hidden = false
-    document.getElementById("population_cb").hidden = false
+    // document.getElementById("susceptible_cb").hidden = false
+    // document.getElementById("infected_cb").hidden = false
+    // document.getElementById("immune_cb").hidden = false
+    // document.getElementById("dead_cb").hidden = false
+    // document.getElementById("population_cb").hidden = false
 
     var susceptible_trace = {
         x: data.days,
         y: data.susceptible,
         type: type_a,
         line: line_a,
-        visible: document.getElementById("susceptible_cb").checked,
         name: "susceptible"
     };
     var infected_trace = {
@@ -23,7 +22,6 @@ function  build_full_graph(data) {
         y: data.infected,
         type: type_a,
         line: line_a,
-        visible: document.getElementById("infected_cb").checked,
         name: "infected"
     };
     var immune_trace = {
@@ -31,7 +29,6 @@ function  build_full_graph(data) {
         y: data.immune,
         type: type_a,
         line: line_a,
-        visible: document.getElementById("immune_cb").checked,
         name: "immune"
     };
     var dead_trace = {
@@ -39,7 +36,6 @@ function  build_full_graph(data) {
         y: data.dead,
         type: type_a,
         line: line_a,
-        visible: document.getElementById("dead_cb").checked,
         name: "dead"
     };
     var population_trace = {
@@ -47,13 +43,22 @@ function  build_full_graph(data) {
         y: data.population,
         type: type_a,
         line: line_a,
-        visible: document.getElementById("population_cb").checked,
         name: "population"
     };
     
     var to_plot = [susceptible_trace, infected_trace, immune_trace, dead_trace, population_trace]
     
     var layout = {
+        autosize: false,
+        width: 600,
+        height: 400,
+        margin: {
+            l: 0,
+            r: 0,
+            b: 20,
+            t: 20,
+            pad: 4
+          },
         xaxis: {
             range: [0, data.sim_period]
         },

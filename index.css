@@ -15,7 +15,7 @@ label{
     text-align: left;
 }
 input[type=number] {
-    width: 10rem;
+    width: 7rem;
 }
 
 .pirate{height:75px;
@@ -35,3 +35,11 @@ input[type=number] {
     background-color: white;
 
 }
+
+.table-wrapper-scroll-y {
+    display: block;
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+  }
