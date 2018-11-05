@@ -78,7 +78,7 @@ immune_cell.innerHTML = round(immune, 0)
 dead_cell.innerHTML = round(dead, 0)
 population_cell.innerHTML = round(population, 0)
 
-//build_part_graph(day, susceptible, infected, immune, deae, population)
+build_graph(data, current_row)
 }
 
 function clear_values() {
@@ -106,9 +106,9 @@ if (has_run && (immunity_value != immunity.value || virulence_value != virulence
     clear_table()
 }
 if (method == "autorun") {
-    build_full_graph(data)
     for(day = current_row; day<= data_length; day++) {
         write_to_table(data.days[day], data.susceptible[day], data.infected[day], data.immune[day], data.dead[day], data.population[day])
+        current_row ++;
     }
 }
 if (method == "day_by_day") {
