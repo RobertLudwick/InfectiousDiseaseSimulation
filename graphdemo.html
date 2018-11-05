@@ -5,11 +5,11 @@
 </head>
 
 <body>
-        <input type="checkbox" name="susceptible_cb" id="susceptible_cb" value="susceptible_value" checked> Susceptible
-        <input type="checkbox" name="infected_cb" id="infected_cb" value="infected_value" checked> Infected
-        <input type="checkbox" name="immune_cb" id="immune_cb" value="immune_value" checked> Immune
-        <input type="checkbox" name="dead_cb" id="dead_cb" value="dead_value" checked> Dead
-        <input type="checkbox" name="population_cb" id="population_cb" value="population_value" checked> Population
+        <input type="checkbox" name="susceptible_cb" id="susceptible_cb" value="susceptible_value" checked onclick="show('susceptible_cb')"> Susceptible
+        <input type="checkbox" name="infected_cb" id="infected_cb" value="infected_value" checked onclick="show('infected_cb')"> Infected
+        <input type="checkbox" name="immune_cb" id="immune_cb" value="immune_value" checked onclick="show('immune_cb')"> Immune
+        <input type="checkbox" name="dead_cb" id="dead_cb" value="dead_value" checked onclick="show('dead_cb')"> Dead
+        <input type="checkbox" name="population_cb" id="population_cb" value="population_value" checked onclick="show('population_cb')"> Population
         <div id="tester" style="width:900px;height:700px;"></div>
         <a href="#" class="btn btn-primary" onclick="run()">generate graph</a>
 
