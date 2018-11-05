@@ -100,4 +100,4 @@ def main():
     for i in data[0]:
         print(i, data[1][i], data[2][i], data[3][i], data[4][i], data[5][i])
 
-
+main()

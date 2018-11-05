@@ -13,48 +13,52 @@
     <meta charset="utf-8"> 
     <head>
 	    <script type="text/javascript" src="sirmodel.js" ></script>
-		<script type="text/javascript" src="index2.js" ></script>
+		<script type="text/javascript" src="index.js" ></script>
         <h1><img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones">Infectious Disease Simulation<img class="pirate" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Pirate_Flag.svg/1200px-Pirate_Flag.svg.png" alt="Skull & Crossbones"></h1>
     </head>
     <body>
-        <div class="row ">
+        <div class="row">
             <div class="mx-auto">
-            <div class="col-md-6">
+            <div class="col-md-6"></div>
                 <div class="card" style="width: 40rem;">
-                    <div class="card-body">
+                    <div class="card-body" style="width: auto">
                         <h3 class="card-title">Experimental Variables</h3>
                         <br>
                         <br>
+                        <form action="#">
                         <label for="initialImmunity"> Initial % Immunity (0-100%) </label>
-                        <input id="initialImmunity" type="number" min="1" step="1">
+                        <input id="initialImmunity" type="number" min="1" max="100" step="1" size="7" required>
+                        <label for="initialImmunity" id="initialImmunityError" style="color:red" hidden>*</label>
                     
                         <label for="Virulence"> Virulence (0.00- 75.00%) </label> 
-                        <input id="Virulence" type="number" min="0.01" step="0.01">
+                        <input id="Virulence" type="number" min="0.00" max="75" step="0.01" size="7" required>
+                        <label for="Virulence" id="VirulenceError" style="color:red" hidden>*</label>
         
                         <label for="infectionDuration"> Duration of Infection (1-20) </label>
-                        <input id="infectionDuration" type="number" min="1" step="1">
+                        <input id="infectionDuration" type="number" min="1" max="20" step="1" size="7" required>
+                        <label for="infectionDuration" id="infectionDurationError" style="color:red" hidden>*</label>
         
         			    <label for="TransRate"> Rate of Transmission (0.1-10.0) </label>
-        			    <input id="TransRate" type="number" min="0.01" step="0.01">
+                        <input id="TransRate" type="number" min="0.01" max="10" step="0.01" size="7" required>
+                        <label for="TransRate" id="TransRateError" style="color:red" hidden>*</label>
                         <br>
+                        <label id="rangeError" style="color:red" hidden>Range Error</label>
                         <br>
                         <span>
                             <div class="butt">
-                                <a href="#" class="btn btn-primary" onclick="run('autorun')">Autorun</a>
-                                <a href="#" class="btn btn-primary" onclick="run('day_by_day')">Run Day-By-Day</a>
-                                <a href="#" class="btn btn-primary" onclick="Clear()">Clear</a>
-                                
+                                <input type=submit class="btn btn-primary" onclick="run('autorun')" value="Autorun">
+                                <input type=submit class="btn btn-primary" onclick="run('day_by_day')" value="Run Day-By-Day">
+                                <input type=button class="btn btn-primary" onclick="clear_values()" value="Clear">
                                 <p id="demo"></p>
-                            
-                    
                             </div>
                         </span>
+                        </form>
                     </div>
             
                 </div>
-            </div>
-          <div class="col-md-6">
-           <div class="card" id="tableOut" style="width: 40rem; height: 75rem;">
+            
+          <div class="col-md-6" >
+           <div class="table-wrapper" id="tableOut" style="background-color: white; width: 40rem; height: auto;">
           	<div class="card-body">
                   <h3 class="card-title">Results</h3>
                       <table id="myTable" width="375" BORDER="5">

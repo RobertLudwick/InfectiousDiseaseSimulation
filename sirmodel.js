@@ -28,10 +28,9 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
             s_prime = s[n-1] - (trans_rate * s[n-1] * i[n-1]/initial_population)
             i_prime = i[n-1] + (trans_rate * s[n-1] * i[n-1]/initial_population - i[n-1]/infection_duration - i[n-1] * percent_die/(100*infection_duration))
             r_prime = r[n-1] + (i[n-1]/infection_duration)
-            dead_prime = dead[n-1] = percent_die * i[n-1]/(100 * infection_duration)
+            dead_prime = dead[n-1] + percent_die * i[n-1]/(100 * infection_duration)
             N_prime = s_prime + i_prime + r_prime
 
-            
             days.push(n)
             s.push(s_prime)
             i.push(i_prime)

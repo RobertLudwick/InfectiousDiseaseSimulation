@@ -1,22 +1,61 @@
 // global variables
 var has_run = false
 var data
+var immunity, virulence, duration, transmission 
+var immunity_value = 0
+var virulence_value = 0
+var duration_value = 0
+var transmission_value = 0
+
+//functions
 function run_model() {
-var imunity = document.getElementById("initialImmunity").value;
-var virulence = document.getElementById("Virulence").value;
-var duration = document.getElementById("infectionDuration").value;
-var transmission = document.getElementById("TransRate").value;
+    immunity = document.getElementById("initialImmunity")
+    virulence = document.getElementById("Virulence")
+    duration = document.getElementById("infectionDuration")
+    transmission = document.getElementById("TransRate")
+    immunity_value = immunity.value
+    virulence_value = virulence.value
+    duration_value = duration.value
+    transmission_value = transmission.value
 
-var should_run = validation(imunity, virulence, duration, transmission)
-if (!should_run){
-    return 
-}
-
-return new model(imunity, virulence, duration, transmission)
+    var should_run = validation()
+    if (!should_run){
+        return 
+    }
+    has_run = true
+    return new model(immunity_value, virulence_value, duration_value, transmission_value)
 }
 
 function validation() {
-return true
+    should_run = true
+    document.getElementById("initialImmunityError").hidden = true
+    document.getElementById("VirulenceError").hidden = true
+    document.getElementById("infectionDurationError").hidden = true
+    document.getElementById("TransRateError").hidden = true
+    document.getElementById("rangeError").hidden = true
+
+    if(immunity.value == "" || immunity.value < 0 || immunity.value > 100) {
+        should_run = false
+        document.getElementById("initialImmunityError").hidden = false
+    }
+    if(virulence.value == "" || virulence.value < 0 || virulence.value > 75) {
+        should_run = false
+        document.getElementById("VirulenceError").hidden = false
+    }
+    if(duration.value == "" || duration.value < 1 || duration.value > 20) {
+        should_run = false
+        document.getElementById("infectionDurationError").hidden = false
+    }
+    if(transmission.value == "" || transmission.value < 0.1 || transmission.value > 10) {
+        should_run = false
+        document.getElementById("TransRateError").hidden = false
+    }
+
+if (should_run == false) {
+    document.getElementById("rangeError").hidden = false
+}
+
+return should_run
 }
 
 function write_to_table(day, susceptible, infected, immune, dead, population) {
@@ -39,12 +78,28 @@ dead_cell.innerHTML = round(dead, 0)
 population_cell.innerHTML = round(population, 0)
 }
 
+function clear_values() {
+    document.getElementById("initialImmunity").value = "";
+	document.getElementById("Virulence").value = "";
+	document.getElementById("infectionDuration").value = "";
+	document.getElementById("TransRate").value = "";
+}
+
+function clear_table() {
+    var table = document.getElementById("myTable")
+    while (table.rows.length > 1) {
+        table.deleteRow(-1);
+    }
+}
 
 
 function run (method) {
 if (!has_run) {
     data = run_model()
-    has_run = true
+}
+
+if (has_run && (immunity_value != immunity.value || virulence_value != virulence.value || duration_value != duration.value || transmission_value != transmission.value)) {
+    clear_table()
 }
 if (method == "autorun") {
     while (data.days.length!= 0) {

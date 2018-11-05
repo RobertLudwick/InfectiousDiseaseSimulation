@@ -11,6 +11,13 @@ h1{text-align:center;
     padding: 0;
 }
 
+label{
+    text-align: left;
+}
+input[type=number] {
+    width: 10rem;
+}
+
 .pirate{height:75px;
     width:120px;
 }
