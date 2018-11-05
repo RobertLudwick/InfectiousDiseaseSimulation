@@ -1,16 +1,14 @@
 
-// var susceptible_cb = document.getElementById("susceptible_cb")
-// var infected_cb = document.getElementById("infected_cb")
-// var immune_cb = document.getElementById("immune_cb")
-// var dead_cb = document.getElementById("dead_cb")
-// var population_cb = document.getElementById("population_cb")
-var data
-
-function  build_graph(data) {
-    console.log("built")
-    var d = document.getElementById('tester')
+function  build_full_graph(data) {
+    var d = document.getElementById('plot')
     var type_a = "line"
     var line_a = {shape: "spline"}
+
+    document.getElementById("susceptible_cb").hidden = false
+    document.getElementById("infected_cb").hidden = false
+    document.getElementById("immune_cb").hidden = false
+    document.getElementById("dead_cb").hidden = false
+    document.getElementById("population_cb").hidden = false
 
     var susceptible_trace = {
         x: data.days,
@@ -19,8 +17,6 @@ function  build_graph(data) {
         line: line_a,
         visible: document.getElementById("susceptible_cb").checked,
         name: "susceptible"
-        
-        
     };
     var infected_trace = {
         x: data.days,
@@ -59,21 +55,22 @@ function  build_graph(data) {
     
     var layout = {
         xaxis: {
-            range: [0, 100]
+            range: [0, data.sim_period]
         },
         yaxis: {
-            range: [0, 120000]
+            range: [0, data.initial_population*1.1]
         }
     }
 
     Plotly.newPlot(d, to_plot, layout)
 }
 
-function show() {
-    build_graph(data)
+function build_part_graph() {
+
+    build_full_graph(part_data)
 }
 
-function run() {
-    data = new model(0, 5, 2, 1)
-    build_graph(data)
+function show() {
+    build_full_graph(data)
 }
+

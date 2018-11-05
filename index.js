@@ -6,6 +6,7 @@ var immunity_value = 0
 var virulence_value = 0
 var duration_value = 0
 var transmission_value = 0
+var current_row = 0
 
 //functions
 function run_model() {
@@ -76,6 +77,8 @@ infected_cell.innerHTML = round(infected, 0)
 immune_cell.innerHTML = round(immune, 0)
 dead_cell.innerHTML = round(dead, 0)
 population_cell.innerHTML = round(population, 0)
+
+//build_part_graph(day, susceptible, infected, immune, deae, population)
 }
 
 function clear_values() {
@@ -97,25 +100,27 @@ function run (method) {
 if (!has_run) {
     data = run_model()
 }
+var data_length = data.sim_period
 
 if (has_run && (immunity_value != immunity.value || virulence_value != virulence.value || duration_value != duration.value || transmission_value != transmission.value)) {
     clear_table()
 }
 if (method == "autorun") {
-    while (data.days.length!= 0) {
-        write_to_table(data.days.shift(), data.susceptible.shift(), data.infected.shift(), data.immune.shift(), data.dead.shift(), data.population.shift())
+    build_full_graph(data)
+    for(day = current_row; day<= data_length; day++) {
+        write_to_table(data.days[day], data.susceptible[day], data.infected[day], data.immune[day], data.dead[day], data.population[day])
     }
 }
 if (method == "day_by_day") {
-    if(data.days.length != 0) {
-        write_to_table(data.days.shift(), data.susceptible.shift(), data.infected.shift(), data.immune.shift(), data.dead.shift(), data.population.shift())
+    if(current_row <= data_length) {
+        write_to_table(data.days[current_row], data.susceptible[current_row], data.infected[current_row], data.immune[current_row], data.dead[current_row], data.population[current_row])
+        current_row ++;
     }
 }
 }
 
 
 // helper functions
-
 function round(value, decimals) {
 return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 } 

@@ -60,9 +60,9 @@ function model(percent_immune, virulence, infection_duration, trans_rate){
     // default/fixed values
     var initial_population = 100000
     var initial_infected = 1
-    var sim_period = 100
+    var sim_period = 30
 
-    this. initial_population = initial_population
+    this.initial_population = initial_population
     this.initial_infected = initial_infected
     this.sim_period = sim_period
 
