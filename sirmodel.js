@@ -33,11 +33,11 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
 
             
             days.push(n)
-            s.push(round(s_prime, 2))
-            i.push(round(i_prime, 2))
-            r.push(round(r_prime, 2))
-            dead.push(round(dead_prime, 2))
-            N.push(round(N_prime, 2))
+            s.push(s_prime)
+            i.push(i_prime)
+            r.push(r_prime)
+            dead.push(dead_prime)
+            N.push(N_prime)
         }
 
     }
@@ -59,7 +59,7 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
 function model(percent_immune, virulence, infection_duration, trans_rate){
     // default/fixed values
     var initial_population = 100000
-    var initial_infected = 1
+    var initial_infected = 7
     var sim_period = 30
 
     var model = new sirmodel(initial_population, infection_duration, trans_rate, virulence, percent_immune, initial_infected, sim_period)
@@ -74,5 +74,17 @@ function model(percent_immune, virulence, infection_duration, trans_rate){
 // helper functions
 function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
-  } 
-  
+} 
+
+
+// Testing the model: Using the excel spread sheet to generate number and test them against the model
+/* 
+    First test using:
+    Length of infection = 2.00
+    R0/rate of transmission = 1.0
+    Percentage of people that die when infected = 0.00
+    Number of people in initial population
+    Percentage of initial population that is immune = 0.00
+    Number of infectious individual in initial population = 1.00
+*/
+
