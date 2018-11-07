@@ -4,6 +4,9 @@
 
 
 function sirmodel(initial_population, infection_duration, trans_rate, percent_die, percent_immune, initial_infected, sim_period) {
+    console.log("sirmodel")
+    this.initial_population = initial_population
+    this.sim_period = sim_period
 
     // data
     days = new Array()
@@ -53,24 +56,3 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
 
 }
 
-// use this to get your numbers, it's like temporary interface to get numbers
-// it can return the list of number we see on the website. all values in percent
-function model(percent_immune, virulence, infection_duration, trans_rate){
-
-    // default/fixed values
-    var initial_population = 100000
-    var initial_infected = 1
-    var sim_period = 30
-
-    this.initial_population = initial_population
-    this.initial_infected = initial_infected
-    this.sim_period = sim_period
-
-    var model = new sirmodel(initial_population, infection_duration, trans_rate, virulence, percent_immune, initial_infected, sim_period)
-    this.days = model.days
-    this.susceptible = model.susceptible
-    this.infected = model.infected
-    this.immune = model.immune
-    this.dead = model.dead
-    this.population = model.population
-}

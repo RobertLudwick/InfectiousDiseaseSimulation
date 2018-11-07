@@ -1,7 +1,7 @@
 // global variables
 var has_run = false
 var data
-var immunity, virulence, duration, transmission 
+var immunity, virulence, duration, transmission
 var immunity_value = 0
 var virulence_value = 0
 var duration_value = 0
@@ -24,7 +24,10 @@ function run_model() {
         return 
     }
     has_run = true
-    return new model(immunity_value, virulence_value, duration_value, transmission_value)
+    var initial_population = 100000
+    var sim_period = 120
+    var inital_infected = 1
+    return new sirmodel(initial_population, duration_value ,transmission_value, virulence_value, immunity_value, inital_infected, sim_period)
 }
 
 function validation() {
@@ -59,28 +62,6 @@ if (should_run == false) {
 return should_run
 }
 
-function write_to_table(day, susceptible, infected, immune, dead, population) {
-var table  = document.getElementById("myTable")
-
-var row = table.insertRow(-1);
-
-var day_cell = row.insertCell(0)
-var susceptible_cell = row.insertCell(1)
-var infected_cell = row.insertCell(2)
-var immune_cell = row.insertCell(3)
-var dead_cell = row.insertCell(4)
-var population_cell = row.insertCell(5)
-
-day_cell.innerHTML = day
-susceptible_cell.innerHTML = round(susceptible, 0)
-infected_cell.innerHTML = round(infected, 0)
-immune_cell.innerHTML = round(immune, 0)
-dead_cell.innerHTML = round(dead, 0)
-population_cell.innerHTML = round(population, 0)
-
-build_graph(data, current_row)
-}
-
 function clear_values() {
     document.getElementById("initialImmunity").value = "";
 	document.getElementById("Virulence").value = "";
@@ -101,11 +82,13 @@ if (!has_run) {
     data = run_model()
 }
 var data_length = data.sim_period
+console.log(data_length)
 
 if (has_run && (immunity_value != immunity.value || virulence_value != virulence.value || duration_value != duration.value || transmission_value != transmission.value)) {
     clear_table()
 }
 if (method == "autorun") {
+    console.log(method)
     for(day = current_row; day<= data_length; day++) {
         write_to_table(data.days[day], data.susceptible[day], data.infected[day], data.immune[day], data.dead[day], data.population[day])
         current_row ++;
