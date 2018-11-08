@@ -61,17 +61,11 @@
             
                 </div>
                 <div class="col-md-4" style="float:left"> 
-                    <div class="row" >
+                    <input type=submit class="btn btn-primary" onclick="showTable()" value="Table">
+                           <input type=button class="btn btn-primary" onclick="showGraph()" Value="Graph">
+		    <div class="row" >
                         <div class="row" id="plot"></div>
-                        
-                    </div>
-                </div>
-                
-        </div>  
-        <br>
-        <br>  
-        <div class="col-md-9" >
-           <div class="table-wrapper" id="tableOut" style="background-color: white; margin-bottom: 14px">
+                        <div class="table-wrapper" id="tableOut" style="background-color: white; margin-bottom: 14px">
             <div class="table-wrapper-scroll-y">
                   <h3 class="card-title">Results</h3>
                       <table class="table table-bordered table-striped" id="myTable" width="375" BORDER="5">
@@ -89,6 +83,14 @@
                     
             </div>
             </div>
+                    </div>
+                </div>
+                
+        </div>  
+        <br>
+        <br>  
+        <div class="col-md-9" >
+           
         
         </div>
     </body>

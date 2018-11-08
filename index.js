@@ -9,6 +9,20 @@ var transmission_value = 0
 var current_row = 0
 
 //functions
+function showGraph() {
+	var graph = document.getElementById("plot")
+	graph.hidden = false
+	var table = document.getElementById("tableOut")
+	table.hidden = true
+}
+
+function showTable() {
+var graph = document.getElementById("plot")
+	graph.hidden = true
+	var table = document.getElementById("tableOut")
+	table.hidden = false
+}
+
 function run_model() {
     immunity = document.getElementById("initialImmunity")
     virulence = document.getElementById("Virulence")
