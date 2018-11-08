@@ -54,3 +54,11 @@ h1{text-align:center;
     background-color: white;
     display:block;
 }
+
+
+
+.row{
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+}
