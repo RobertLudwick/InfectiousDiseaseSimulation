@@ -1,6 +1,7 @@
 body{
-  background: linear-gradient(to bottom, #0033cc 0%, #666699 100%);
+  background: black;
   height:100vh;
+  align-items:center;
 }
 head{background-color:black;}
 h1{text-align:center;
@@ -11,11 +12,28 @@ h1{text-align:center;
     padding: 0;
 }
 
-label{
-    text-align: left;
+.mx-auto .row{
+    align-items:center;
+    text-align:center;
 }
-input[type=number] {
-    width: 7rem;
+
+.col-md-6 .card{
+    align-self:center;
+    align-items:center;
+    text-align:center;
+    display:block;
+}
+
+#beep{
+    background-color:black;
+}
+
+.btn-info{
+    color:black;
+}
+
+.spacer{
+    width:16%;
 }
 
 .pirate{height:75px;
@@ -30,16 +48,9 @@ input[type=number] {
     margin:10px;
 }
 .card{
-    margin:30px;
+    padding-left:5px;
+    padding-right:5px;
     height:40vh;
     background-color: white;
-
+    display:block;
 }
-
-.table-wrapper-scroll-y {
-    display: block;
-    min-height: 300px;
-    max-height: 500px;
-    overflow-y: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-  }
