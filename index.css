@@ -5,7 +5,6 @@ head{background-color:black;}
 h1{text-align:center;
     background-color:black;
     color:white;
-    height:100;
      margin: 0;
     padding: 0;
 }
@@ -30,5 +29,4 @@ h1{text-align:center;
 .row{
   display: flex;
   justify-content: center;
-  //border: 2px solid black;
 }
