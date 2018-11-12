@@ -3,10 +3,33 @@ head {
 }
 
 body {
-    background: rgb(255,255,255);
+    background: #F5F6FA;
+    
+}
+.container {
+    width: 97%;
+    background: #FFFFFF;
+    padding: 0 5px;
+}
+.inputs {
+    margin:10px; 
+    padding: 0 5px;
+    background: #F5F5F5;  
+}
+
+input[type="number"] {
+    width: 30%;
+    background: #F5F6FA;
+    
+}
+
+.graph_div {
+    margin: 0 auto;
+    
 }
 
 .table-wrapper-scroll-y {
+    margin: 2%;
     display: block;
     min-height: 300px;
     max-height: 500px;

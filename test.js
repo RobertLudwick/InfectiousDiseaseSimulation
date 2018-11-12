@@ -27,3 +27,8 @@ function plot() {
 function rand() {
     return Math.random();
   }
+
+var fruits = [1, 2, 3, 4];
+
+var str = fruits.valueOf();
+console.log(str)

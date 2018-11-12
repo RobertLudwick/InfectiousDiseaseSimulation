@@ -1,6 +1,7 @@
 // global variables
 var has_run = false
 var data
+var graph
 var immunity, virulence, duration, transmission, initial_population, sim_period, initial_infected
 var immunity_value = 0
 var virulence_value = 0
@@ -87,11 +88,15 @@ return should_run
 }
 
 function clear_values() {
-    document.getElementById("initialImmunity").value = "";
-	document.getElementById("Virulence").value = "";
-	document.getElementById("infectionDuration").value = "";
-    document.getElementById("TransRate").value = "";
+    document.getElementById("initial_immunity").value = ""
+    document.getElementById("virulence").value = ""
+    document.getElementById("infection_duration").value = ""
+    document.getElementById("trans_rate").value = ""
+    document.getElementById("initial_population").value = ""
+    document.getElementById("sim_period").value = ""
+    document.getElementById("initial_infected").value = ""
     clear_table()
+    graph.empty_graph()
 }
 
 function clear_table() {
@@ -103,6 +108,12 @@ function clear_table() {
 
 function has_changed() {
     has_run = false
+}
+
+function export_csv(){
+    if(has_run) {
+        download_csv(data)
+    }
 }
 
 function run (method) {
@@ -119,7 +130,6 @@ if (method == "autorun") {
     graph.autorun()
     for(day = current_row; day<= data.sim_period; day++) {
         write_to_table(data.days[day], data.susceptible[day], data.infected[day], data.immune[day], data.dead[day], data.population[day])
-        //graph.write_to_graph(day)
         current_row ++;
     }
 }

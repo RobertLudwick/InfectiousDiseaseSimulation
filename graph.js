@@ -9,12 +9,11 @@ class Graph {
         this.range = data.sim_period * 1.1
         this.domain = data.initial_population * 1.1
         this.layout = {
-            autosize: false,
-            width: 500,
-            height: 400,
+            autosize: true,
+            
             margin: {
-                l: 5,
-                r: 0,
+                l: 40,
+                r: 20,
                 b: 20,
                 t: 20,
                 pad: 1
@@ -28,6 +27,10 @@ class Graph {
             }
         }
         this.has_started = false
+    }
+
+    empty_graph() {
+        Plotly.newPlot(this.graph_div, [], this.layout, {responsive: true})
     }
 
     autorun() {

@@ -7,13 +7,11 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
     console.log("sirmodel")
     this.initial_population = initial_population
     this.sim_period = sim_period
-    console.log("initial_population", initial_population)
-    console.log("infection_duration", infection_duration)
-    console.log("trans_rate", trans_rate)
-    console.log("percent_die", percent_die)
-    console.log("percent_immune", percent_immune)
-    console.log("initial_infected", initial_infected)
-    console.log("sim_period", sim_period)
+    this.infection_duration = infection_duration
+    this.trans_rate = trans_rate
+    this.percent_die = percent_die
+    this.percent_immune = percent_immune
+    this.initial_infected = initial_infected
 
     // data
     days = new Array()
