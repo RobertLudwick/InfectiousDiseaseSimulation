@@ -1,64 +1,38 @@
-body{
-  background: black;
-  height:100vh;
-  align-items:center;
-}
-head{background-color:black;}
-h1{text-align:center;
-    background-color:black;
-    color:white;
-    height:100;
-     margin: 0;
-    padding: 0;
+head {
+    background: rgb(255,255,255); 
 }
 
-.mx-auto .row{
-    align-items:center;
-    text-align:center;
+body {
+    background: rgb(255,255,255);
 }
 
-.col-md-6 .card{
-    align-self:center;
-    align-items:center;
-    text-align:center;
-    display:block;
+.table-wrapper-scroll-y {
+    display: block;
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
 }
 
-#beep{
-    background-color:black;
+.fixed_header{
+    table-layout: fixed;
+    border-collapse: collapse;
 }
 
-.btn-info{
-    color:black;
+.fixed_header tbody{
+  display:block;
+  overflow: auto;
+  min-height: 300px;
+  max-height: 500px;
 }
 
-.spacer{
-    width:16%;
+.fixed_header thead tr {
+   display: block;
 }
 
-.pirate{height:75px;
-    width:120px;
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: left;
+  width: 200px;
 }
-
-.card-title{text-align:center;}
-
-.butt{text-align:center;}
-
-.card-body{
-    margin:10px;
-}
-.card{
-    padding-left:5px;
-    padding-right:5px;
-    height:40vh;
-    background-color: white;
-    display:block;
-}
-
-
-
-.row{
-  display: flex;
-  justify-content: center;
-  border: 2px solid black;
-}
+  

@@ -39,7 +39,7 @@ function run_model() {
     }
     has_run = true
     var initial_population = 100000
-    var sim_period = 120
+    var sim_period = 30
     var inital_infected = 1
     return new sirmodel(initial_population, duration_value ,transmission_value, virulence_value, immunity_value, inital_infected, sim_period)
 }

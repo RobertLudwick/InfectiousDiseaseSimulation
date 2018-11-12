@@ -1,7 +1,7 @@
 // This file manages the table displayed on the page
 function write_to_table(day, susceptible, infected, immune, dead, population) {
     console.log("table")
-    var table  = document.getElementById("myTable")
+    var table  = document.getElementById("data_table").getElementsByTagName('tbody')[0];
     
     var row = table.insertRow(-1);
     

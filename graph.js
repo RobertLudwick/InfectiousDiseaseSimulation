@@ -1,7 +1,7 @@
 // This page manages the graph displayed on the page
 function  build_graph(data, current_row) {
     
-    var d = document.getElementById('plot')
+    var d = document.getElementById('graph_div')
     var type_a = "line"
     var line_a = {shape: "spline"}
     var x_data = data.days.slice(0, current_row)
