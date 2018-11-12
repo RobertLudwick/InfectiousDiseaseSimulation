@@ -1,6 +1,5 @@
 // This file manages the table displayed on the page
 function write_to_table(day, susceptible, infected, immune, dead, population) {
-    console.log("table")
     var table  = document.getElementById("data_table").getElementsByTagName('tbody')[0];
     
     var row = table.insertRow(-1);
@@ -19,8 +18,7 @@ function write_to_table(day, susceptible, infected, immune, dead, population) {
     dead_cell.innerHTML = round(dead, 0)
     population_cell.innerHTML = round(population, 0)
     
-    build_graph(data, current_row)
-    }
+}
 
 
 class Table {
