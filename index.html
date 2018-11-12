@@ -16,6 +16,7 @@
 	<head>
 		 <script type="text/javascript" src="sirmodel.js" ></script>
         <script type="text/javascript" src="index.js" ></script>
+        <script type="text/javascript" src="export.js" ></script>
         <script src="table.js" type="text/javascript"></script>
         <!-- Plotly.js -->
         <script src="https://cdn.plot.ly/plotly-latest.min.js" type="text/javascript"></script>
@@ -32,30 +33,57 @@
     				<div class="card">
 	      				<div class="card-body">
 	        				<h5 class="card-title">Experimental Variables</h5>
-							<form action="#">
-                        		<label for="initialImmunity"> Initial % Immunity (0-100%) </label>
-                        		<input id="initialImmunity" type="number" min="0" max="100" step="1" size="7" required>
-                        		<label for="initialImmunity" id="initialImmunityError" style="color:red" hidden>*</label>
-                   
-                        		<label for="Virulence"> Virulence (0.00- 75.00%) </label>
-                        		<input id="Virulence" type="number" min="0.00" max="75" step="0.01" size="7" required>
-                        		<label for="Virulence" id="VirulenceError" style="color:red" hidden>*</label>
-       
-                        		<label for="infectionDuration"> Duration of Infection (1-20) </label>
-                        		<input id="infectionDuration" type="number" min="1" max="20" step="1" size="7" required>
-                        		<label for="infectionDuration" id="infectionDurationError" style="color:red" hidden>*</label>
-       
-                          		<label for="TransRate"> Rate of Transmission (0.1-10.0) </label>
-                        		<input id="TransRate" type="number" min="0.01" max="10" step="0.01" size="7" required>
-                        		<label for="TransRate" id="TransRateError" style="color:red" hidden>*</label>
-                        		<br>
-                        		<label id="rangeError" style="color:red" hidden>Range Error</label>
-                        		<br>
+							<div class="form-group">
+                        <label for="initial_immunity"> Initial % Immune (0-100%) </label> 
+                        <label for="initial_immunity" id="initial_immunity_error" style="color:red" hidden>*</label> <br>
+                        <input id="initial_immunity" type="number" min="0" max="100" step="1" size="20" value="0" onchange="has_changed()" required>    
+                    </div>
+
+                    <div class="form-group">
+                        <label for="virulence"> Virulence (0.00 - 75.00%) </label> 
+                        <label for="virulence" id="virulence_error" style="color:red" hidden>*</label> <br>
+                        <input id="virulence" type="number" min="0.00" max="75" step="0.01" size="20" value="0" onchange="has_changed()" required>    
+                    </div>
+
+                    <div class="form-group">
+                        <label for="infection_duration"> Duration of Infection (1-20 days) </label> 
+                        <label for="infection_duration" id="infection_duration_error" style="color:red" hidden>*</label> <br>
+                        <input id="infection_duration" type="number" min="1" max="100" step="1" size="20" value="2" onchange="has_changed()" required>    
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="trans_rate"> Rate of Transmission (0.1-10.0) </label> 
+                        <label for="trans_rate" id="trans_rate_error" style="color:red" hidden>*</label> <br>
+                        <input id="trans_rate" type="number" min="0.01" max="10" step="0.01" size="20" value="1" onchange="has_changed()" required>    
+                    </div>
+
+                    <div class="form-group">
+                            <label for="initial_population"> Initial Population Size (1,000-1,000,000) </label> 
+                            <label for="initial_population" id="initial_population_error" style="color:red" hidden>*</label> <br>
+                            <input id="initial_population" type="number" min="1000" max="1000000" step="1" size="20" value="100000" onchange="has_changed()" required>    
+                    </div>
+
+                    <div class="form-group">
+                            <label for="initial_infected"> People Initially Infected (1-10,000) </label> 
+                            <label for="initial_infected" id="initial_infected_error" style="color:red" hidden>*</label> <br>
+                            <input id="initial_infected" type="number" min="1" max="10000" step="1" size="20" value="1" onchange="has_changed()" required>    
+                    </div>
+
+                    <div class="form-group">
+                            <label for="sim_period"> Simulation Duration (30 - 1,000 days) </label> 
+                            <label for="sim_period" id="sim_period_error" style="color:red" hidden>*</label> <br>
+                            <input id="sim_period" type="number" min="30" max="1000" step="1" size="20" value="30" onchange="has_changed()" required>    
+                    </div>
+
+                    <br>
+                    <label id="range_error" style="color:red" hidden>Range Error</label>
+                    <br>
                         		<span>
 		                            <div class="butt">
 		                                <input type=submit class="btn btn-primary" onclick="run('autorun')" value="Autorun">
 		                                <input type=submit class="btn btn-primary" onclick="run('day_by_day')" value="Run Day-By-Day">
 		                                <input type=button class="btn btn-primary" onclick="clear_values()" value="Clear">
+		                                <input type=button class="btn btn-primary" id="export_button" onclick="export_csv()" value="Export">
 		                                <p id="demo"></p>
 		                            </div>
 		                        </span>
@@ -69,13 +97,13 @@
 	        				<h5 class="card-title">Results</h5>
 						 <input type=submit class="btn btn-light" onclick="showTable()" value="Table">
                            <input type=button class="btn btn-light" onclick="showGraph()" Value="Graph">	
-					<div class="row" id="plot"></div>
+					<div class="row" id="graph_div"></div>
                         <div class="table-wrapper" id="tableOut" style="background-color: white; margin-bottom: 14px">
             <div class="table-wrapper-scroll-y">
 
 		   
                   
-                      <table class="table table-bordered table-striped" id="myTable" width="375" BORDER="5">
+                      <table class="table table-bordered table-striped" id="data_table" width="375" BORDER="5">
                 <tr>
                     <td>Day</td>
                     <td>Susceptible</td>
