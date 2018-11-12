@@ -1,7 +1,5 @@
 body{
-  background: black;
-  height:100vh;
-  align-items:center;
+  background: grey;
 }
 head{background-color:black;}
 h1{text-align:center;
@@ -12,47 +10,19 @@ h1{text-align:center;
     padding: 0;
 }
 
-.mx-auto .row{
-    align-items:center;
-    text-align:center;
-}
 
-.col-md-6 .card{
-    align-self:center;
-    align-items:center;
-    text-align:center;
-    display:block;
-}
-
-#beep{
-    background-color:black;
-}
-
-.btn-info{
-    color:black;
-}
 
 .spacer{
     width:16%;
-}
-
-.pirate{height:75px;
-    width:120px;
 }
 
 .card-title{text-align:center;}
 
 .butt{text-align:center;}
 
-.card-body{
-    margin:10px;
-}
+
 .card{
-    padding-left:5px;
-    padding-right:5px;
-    height:40vh;
     background-color: white;
-    display:block;
 }
 
 
@@ -60,5 +30,5 @@ h1{text-align:center;
 .row{
   display: flex;
   justify-content: center;
-  border: 2px solid black;
+  //border: 2px solid black;
 }

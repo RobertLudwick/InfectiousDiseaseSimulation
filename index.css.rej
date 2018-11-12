@@ -1,0 +1,14 @@
+diff a/index.css b/index.css	(rejected hunks)
+@@ -54,3 +54,11 @@
+     background-color: white;
+     display:block;
+ }
++
++
++
++.row{
++  display: flex;
++  justify-content: center;
++  border: 2px solid black;
++}
+\ No newline at end of file
