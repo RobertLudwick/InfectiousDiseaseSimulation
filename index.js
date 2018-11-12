@@ -28,10 +28,12 @@ function run_model() {
     virulence = document.getElementById("Virulence")
     duration = document.getElementById("infectionDuration")
     transmission = document.getElementById("TransRate")
+    //period = documtent.getElementById("DaysSimulated")
     immunity_value = immunity.value
     virulence_value = virulence.value
     duration_value = duration.value
     transmission_value = transmission.value
+    
 
     var should_run = validation()
     if (!should_run){
@@ -40,6 +42,7 @@ function run_model() {
     has_run = true
     var initial_population = 100000
     var sim_period = 120
+    //var sim_period = period.value
     var inital_infected = 1
     return new sirmodel(initial_population, duration_value ,transmission_value, virulence_value, immunity_value, inital_infected, sim_period)
 }

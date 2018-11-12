@@ -1,5 +1,5 @@
 body{
-  background: grey;
+  background: #F5F6FA;;
 }
 head{background-color:black;}
 h1{text-align:center;
@@ -30,3 +30,57 @@ h1{text-align:center;
   display: flex;
   justify-content: center;
 }
+
+.container {
+    width: 97%;
+    background: #FFFFFF;
+    padding: 0 5px;
+}
+.inputs {
+    margin:10px; 
+    padding: 0 5px;
+    background: #F5F5F5;  
+}
+
+input[type="number"] {
+    width: 30%;
+    background: #F5F6FA;
+    
+}
+
+.graph_div {
+    margin: 0 auto;
+    
+}
+
+.table-wrapper-scroll-y {
+    margin: 2%;
+    display: block;
+    min-height: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.fixed_header{
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.fixed_header tbody{
+  display:block;
+  overflow: auto;
+  min-height: 300px;
+  max-height: 500px;
+}
+
+.fixed_header thead tr {
+   display: block;
+}
+
+.fixed_header th, .fixed_header td {
+  padding: 5px;
+  text-align: left;
+  width: 200px;
+}
+  
