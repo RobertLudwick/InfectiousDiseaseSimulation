@@ -10,7 +10,6 @@ class Graph {
         this.domain = data.initial_population * 1.1
         this.layout = {
             autosize: true,
-            
             margin: {
                 l: 40,
                 r: 20,
@@ -29,8 +28,14 @@ class Graph {
         this.has_started = false
     }
 
-    empty_graph() {
+    clear_graph() {
         Plotly.newPlot(this.graph_div, [], this.layout)
+    }
+
+    resize() {
+        console.log("resize")
+        var update = {autosize: true}
+        Plotly.relayout(this.graph_div, update)
     }
 
     autorun() {

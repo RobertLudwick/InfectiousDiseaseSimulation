@@ -111,7 +111,7 @@ function clear_values() {
     document.getElementById("sim_period").value = ""
     document.getElementById("initial_infected").value = ""
     clear_table()
-    graph.empty_graph()
+    graph.clear_graph()
 }
 
 function clear_table() {
@@ -129,6 +129,10 @@ function export_csv(){
     if(has_run) {
         download_csv(data)
     }
+}
+
+function resize() {
+    graph.resize()
 }
 
 function run (method) {
