@@ -30,7 +30,7 @@ class Graph {
     }
 
     empty_graph() {
-        Plotly.newPlot(this.graph_div, [], this.layout, {responsive: true})
+        Plotly.newPlot(this.graph_div, [], this.layout)
     }
 
     autorun() {
