@@ -27,6 +27,13 @@ var graph = document.getElementById("graph_div")
 	table.hidden = false
 }
 
+function showBoth() {
+var graph = document.getElementById("graph_div")
+	graph.hidden = false
+	var table = document.getElementById("tableOut")
+	table.hidden = false
+}
+
 function run_model() {
     immunity = document.getElementById("initial_immunity")
     virulence = document.getElementById("virulence")
