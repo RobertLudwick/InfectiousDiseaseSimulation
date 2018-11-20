@@ -54,7 +54,6 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
             dead.push(dead_prime)
             N.push(N_prime)
 
-            console.log(i_prime)
         }
 
     }

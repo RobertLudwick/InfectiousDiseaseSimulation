@@ -30,7 +30,7 @@ class Table {
 
     clear_table() {
     while (this.table.rows.length > 1) {
-        table.deleteRow(-1);
+        this.table.deleteRow(-1);
     }
 }
 }

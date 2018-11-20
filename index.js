@@ -39,7 +39,8 @@ function export_csv(){
     }
 }
 
-function clear() {
+function clear_display() {
+    console.log("clear")
     document.getElementById("initial_immunity").value = ""
     document.getElementById("virulence").value = ""
     document.getElementById("infection_duration").value = ""
@@ -47,7 +48,7 @@ function clear() {
     document.getElementById("initial_population").value = ""
     document.getElementById("sim_period").value = ""
     document.getElementById("initial_infected").value = ""
-    clear_table()
+    table.clear_table()
     graph.clear_graph()
 }
 
