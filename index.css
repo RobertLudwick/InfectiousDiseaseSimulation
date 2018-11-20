@@ -1,15 +1,22 @@
 body{
-  background: #F5F6FA;;
+  background: rgb(128, 128, 128);
 }
-head{background-color:black;}
+
+head{
+    background-color:black;
+    position: fixed;
+}
+
+#content {
+    margin-top: 100px;
+  }
+
 h1{text-align:center;
     background-color:black;
     color:white;
      margin: 0;
     padding: 0;
 }
-
-
 
 .spacer{
     width:16%;
@@ -19,12 +26,9 @@ h1{text-align:center;
 
 .butt{text-align:center;}
 
-
 .card{
     background-color: white;
 }
-
-
 
 .row{
   display: flex;
@@ -53,34 +57,37 @@ input[type="number"] {
     
 }
 
-.table-wrapper-scroll-y {
-    margin: 2%;
-    display: block;
-    min-height: 300px;
-    max-height: 500px;
-    overflow-y: auto;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-}
-
-.fixed_header{
-    table-layout: fixed;
+.scroll {
     border-collapse: collapse;
 }
-
-.fixed_header tbody{
-  display:block;
-  overflow: auto;
-  min-height: 300px;
-  max-height: 500px;
-}
-
-.fixed_header thead tr {
-   display: block;
-}
-
-.fixed_header th, .fixed_header td {
-  padding: 5px;
-  text-align: left;
-  width: 200px;
+  
+.scroll tr {
+    display: flex;
 }
   
+.scroll td {
+    padding: 3px;
+    flex: 1 auto;
+    width: 1px;
+    word-wrap: break;
+}
+  
+.scroll thead tr:after {
+    overflow-y: scroll;
+    visibility: hidden;
+}
+  
+.scroll thead th {
+    flex: 1 auto;
+    display: block;
+    
+}
+  
+.scroll tbody {
+    display: block;
+    width: 100%;
+    overflow-y: auto;
+    min-height: 300px;
+    max-height: 500px;
+
+}

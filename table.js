@@ -32,6 +32,7 @@ class Table {
     }
 
     add_row(row_number) {
+        var table  = document.getElementById("data_table").getElementsByTagName('tbody')[0];
         var row = this.table.insertRow(-1);
 
         var day_cell = row.insertCell(0)
