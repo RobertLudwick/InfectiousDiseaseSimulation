@@ -1,5 +1,5 @@
+// this function writes the data into a csv format
 function create_csv(data) {
-    console.log("done")
     var line_end = "\n"
     var delimiter = ','
     var csv = ""
@@ -21,6 +21,7 @@ function create_csv(data) {
     return csv
 }
 
+// this function creates and downloads a csv file
 function download_csv(data) {
     var filename = "data.csv"
 

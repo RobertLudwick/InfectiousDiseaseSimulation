@@ -4,7 +4,7 @@
 
 
 function sirmodel(initial_population, infection_duration, trans_rate, percent_die, percent_immune, initial_infected, sim_period) {
-    console.log("sirmodel")
+    
     this.initial_population = initial_population
     this.sim_period = sim_period
     this.infection_duration = infection_duration
@@ -12,6 +12,14 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
     this.percent_die = percent_die
     this.percent_immune = percent_immune
     this.initial_infected = initial_infected
+
+    console.log(initial_population)
+    console.log(sim_period)
+    console.log(infection_duration)
+    console.log(trans_rate)
+    console.log(percent_die)
+    console.log(percent_immune)
+    console.log(initial_infected)
 
     // data
     days = new Array()
@@ -45,6 +53,8 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
             r.push(r_prime)
             dead.push(dead_prime)
             N.push(N_prime)
+
+            console.log(i_prime)
         }
 
     }
@@ -60,4 +70,3 @@ function sirmodel(initial_population, infection_duration, trans_rate, percent_di
     this.population = N
 
 }
-

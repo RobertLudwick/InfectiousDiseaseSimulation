@@ -80,7 +80,7 @@ input[type="number"] {
 .scroll thead th {
     flex: 1 auto;
     display: block;
-    
+    background: rgb(128, 128, 128)
 }
   
 .scroll tbody {

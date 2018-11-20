@@ -1,4 +1,4 @@
-// This page manages the graph displayed on the page
+// This file manages the graph displayed on the page
 
 class Graph {
     constructor(data, div_id) {
@@ -33,11 +33,11 @@ class Graph {
     }
 
     resize() {
-        console.log("resize")
         var update = {autosize: true}
         Plotly.relayout(this.graph_div, update)
     }
 
+    // this function creates a complete graph
     autorun() {
         var type_a = this.graph_type
         var line_a = this.graph_line
@@ -85,6 +85,7 @@ class Graph {
         
     }
 
+    // this function one data point at a timeto the graph
     write_to_graph(current_row) {
         var type_a = this.graph_type
         var line_a = this.graph_line
